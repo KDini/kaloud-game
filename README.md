@@ -1,5 +1,7 @@
 # kaloud-game
 
+![](images/main-page.png)
+
 ## Project setup
 ```
 yarn install
