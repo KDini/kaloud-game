@@ -4,7 +4,9 @@ var players = initPlayers();
 var cardsStack = [];
 var drawCardsStack = [];
 
-// fonction de création des cartes
+/**
+ * Fonction qui crée les cartes
+ */
 function initCards() {
     let id = 1;
     let numbers = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
@@ -24,7 +26,10 @@ function initCards() {
     return allCards;
 }
 
-// fonction mélange les cartes
+/**
+ * Fonction pour mélanger les cartes
+ * @param {Array<Object>} cards 
+ */
 function shuffleCards(cards) {
     for (let i = cards.length - 1; i > 0; i--) {
         let randomIndex = Math.floor(Math.random() * i);
@@ -35,13 +40,17 @@ function shuffleCards(cards) {
     return cards;
 }
 
-// fonction distribution des cartes
-function distributeCards(shuffledCards, players) {
-    for (let i = 0; i < players.length; i++) {
+/**
+ * 
+ * @param {Array} shuffledCards 
+ * @param {Object} players 
+ */
+function distributeCards(shuffledCards, player) {
+    for (let i = 0; i < player.length; i++) {
         for (let j = 0; j < 4; j++) {
             let randomCard = randomCardInCards(shuffledCards);
             console.log('random card', randomCard);
-            players[i].hand.push(randomCard);
+            player[i].hand.push(randomCard);
             let indexOfCard = shuffledCards.map(function (card) {
                 return card.id
             }).indexOf(randomCard.id);
@@ -51,12 +60,19 @@ function distributeCards(shuffledCards, players) {
     }
 }
 
-// Select a random card
+/**
+ * Fonction pour sélectionner une carte aléatoire
+ * @param {Array} cards 
+ */
 function randomCardInCards(cards) {
     return cards[Math.floor(Math.random() * cards.length)];
 }
 
-// fonction jouer une ou plusieurs cartes
+/**
+ * Fonction jouer une ou plusieurs cartes
+ * @param {Object} player 
+ * @param {Array<Object>} cardsToBePlayed 
+ */
 function playCard(player, cardsToBePlayed) {
     cardsToBePlayed.map((cardTbp) => {
         player.hand.splice(cardTbp, 1);
@@ -66,13 +82,32 @@ function playCard(player, cardsToBePlayed) {
     console.log('Joueur', player.name, 'lui reste', player.hand);
 }
 
-// fonction check si le jeu finit
+/**
+ * Check si le jeu est fini en vérifiant le nombre de cartes en main du joueur
+ * @param {Object} player 
+ */
 function checkGameEnd(player) {
     if(player.hand.length === 0) {
         console.log('Le jeu est finit');
     } else {
         return;
     }
+}
+
+
+/**
+ * TODO fonction piocher une carte
+ * @param {Object} player 
+ * @param {Array<Object>} drawCardsStack 
+ */
+function drawCard(player, drawCardsStack) {
+    let randomCard = randomCardInCards(drawCardsStack);
+    // TODO Checker si le joueur joue ou garde la carte
+    let indexOfCard = drawCardsStack.map(function (card) {
+        return card.id
+    }).indexOf(randomCard.id);
+    drawCardsStack.splice(indexOfCard, 1);
+    player.hand.push(randomCard);
 }
 
 // fonction création des joueurs
