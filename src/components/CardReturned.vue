@@ -1,6 +1,6 @@
 <template>
 <div>
-  <v-card v-if="isReturned" dark class="mx-auto" width="50" height="80">
+  <v-card v-if="isDistributed" dark class="mx-auto" width="50" height="80">
     <v-img src="../assets/dini.png" height="80px" />
   </v-card>
   <v-card v-else outlined class="mx-auto" width="50" height="80"></v-card>
@@ -9,7 +9,7 @@
 <script>
 export default {
   name: "CardReturned",
-  props: ['isReturned'],
+  props: ['isDistributed'],
   data: () => ({
     
   })

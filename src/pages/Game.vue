@@ -2,123 +2,23 @@
   <v-container grid-list-md fluid style="height:100%;width:100%">
     <v-layout row style="height:100%;width:100%">
       <v-flex xs4>
-        <v-card color="#ff9ff3" style="height:100%;width:100%">
-          <v-card-text class="text-center">
-            <h3>Name 1</h3>
-          </v-card-text>
-          <v-layout class="pa-2" row>
-            <v-flex xs2>
-              <CardReturned :isReturned="true"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="true"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="true"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="true"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-card-text class="text-center">76 Points</v-card-text>
-          </v-layout>
-        </v-card>
+        <PlayerDeck :color="players[0].color" :name="players[0].name" :hand="players[0].hand" :score="players[0].score"></PlayerDeck>
       </v-flex>
       <v-flex xs4>
-        <v-card color="#feca57" style="height:100%;width:100%">
-          <v-card-text class="text-center">
-            <h3>Name 2</h3>
-          </v-card-text>
-          <v-layout class="pa-2" row>
-            <v-flex xs2>
-              <CardReturned :isReturned="true"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="true"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="true"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-card-text class="text-center">7 Points</v-card-text>
-          </v-layout>
-        </v-card>
+        <PlayerDeck :color="players[1].color" :name="players[1].name" :hand="players[1].hand" :score="players[1].score"></PlayerDeck>
       </v-flex>
       <v-flex xs4>
-        <v-card color="#ff6b6b" style="height:100%;width:100%">
-          <v-card-text class="text-center">
-            <h3>Name 3</h3>
-          </v-card-text>
-          <v-layout class="pa-2" row>
-            <v-flex xs2>
-              <CardReturned :isReturned="true"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="true"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-card-text class="text-center">98 Points</v-card-text>
-          </v-layout>
-        </v-card>
+        <PlayerDeck :color="players[2].color" :name="players[2].name" :hand="players[2].hand" :score="players[2].score"></PlayerDeck>
       </v-flex>
       <v-flex xs4>
-        <v-card color="#48dbfb" style="height:100%;width:100%">
-          <v-card-text class="text-center">
-            <h3>Name 4</h3>
-          </v-card-text>
-          <v-layout class="pa-2" row>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="true"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-card-text class="text-center">57 Points</v-card-text>
-          </v-layout>
-        </v-card>
+        <PlayerDeck :color="players[3].color" :name="players[3].name" :hand="players[3].hand" :score="players[3].score"></PlayerDeck>
       </v-flex>
       <v-flex xs4>
         <v-card flat color="transparent" style="height:100%;width:100%">
           <v-card-text class="text-center">4 cartes dans la pioche</v-card-text>
           <v-layout row>
             <v-flex xs6>
-              <CardReturned :isReturned="true"></CardReturned>
+              <CardReturned :isDistributed="true"></CardReturned>
             </v-flex>
             <v-flex xs6>
               <PlayingCard suit="♦" name="K" color="red--text"></PlayingCard>
@@ -131,106 +31,16 @@
         </v-card>
       </v-flex>
       <v-flex xs4>
-        <v-card color="#1dd1a1" style="height:100%;width:100%">
-          <v-card-text class="text-center">
-            <h3>Name 5</h3>
-          </v-card-text>
-          <v-layout class="pa-2" row>
-            <v-flex xs2><CardReturned :isReturned="true"></CardReturned></v-flex>
-            <v-flex xs2><CardReturned :isReturned="true"></CardReturned></v-flex>
-            <v-flex xs2><CardReturned :isReturned="true"></CardReturned></v-flex>
-            <v-flex xs2><CardReturned :isReturned="true"></CardReturned></v-flex>
-            <v-flex xs2><CardReturned :isReturned="true"></CardReturned></v-flex>
-            <v-flex xs2><CardReturned :isReturned="true"></CardReturned></v-flex>
-            <v-card-text class="text-center">45 Points</v-card-text>
-          </v-layout>
-        </v-card>
-        
-        <!-- <PlayerDeck :color="p1.color" :name="p1.name" :hand="p1.hand" :score="p1.score"></PlayerDeck> -->
+        <PlayerDeck :color="players[4].color" :name="players[4].name" :hand="players[4].hand" :score="players[4].score"></PlayerDeck>
       </v-flex>
       <v-flex xs4>
-        <v-card color="#8c7ae6" style="height:100%;width:100%">
-          <v-card-text class="text-center">
-            <h3>Name 6</h3>
-          </v-card-text>
-          <v-layout class="pa-2" row>
-            <v-flex xs2>
-              <CardReturned :isReturned="true"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="true"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-card-text class="text-center">76 Points</v-card-text>
-          </v-layout>
-        </v-card>
+        <PlayerDeck :color="players[5].color" :name="players[5].name" :hand="players[5].hand" :score="players[5].score"></PlayerDeck>
       </v-flex>
       <v-flex xs4>
-        <v-card color="#c8d6e5" style="height:100%;width:100%">
-          <v-card-text class="text-center">
-            <h3>Name 7</h3>
-          </v-card-text>
-          <v-layout class="pa-2" row>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="true"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-card-text class="text-center">76 Points</v-card-text>
-          </v-layout>
-        </v-card>
+        <PlayerDeck :color="players[6].color" :name="players[6].name" :hand="players[6].hand" :score="players[6].score"></PlayerDeck>
       </v-flex>
       <v-flex xs4>
-        <v-card color="#8395a7" style="height:100%;width:100%">
-          <v-card-text class="text-center">
-            <h3>Name 8</h3>
-          </v-card-text>
-          <v-layout class="pa-2" row>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-flex xs2>
-              <CardReturned :isReturned="false"></CardReturned>
-            </v-flex>
-            <v-card-text class="text-center">76 Points</v-card-text>
-          </v-layout>
-        </v-card>
+        <PlayerDeck :color="players[7].color" :name="players[7].name" :hand="players[7].hand" :score="players[7].score"></PlayerDeck>
       </v-flex>
     </v-layout>
   </v-container>
@@ -240,47 +50,133 @@
 <script>
 import PlayingCard from "../components/PlayingCard";
 import CardReturned from "../components/CardReturned";
-// import PlayerDeck from "../components/PlayerDeck";
+import PlayerDeck from "../components/PlayerDeck";
 
 export default {
   name: "Game",
   components: {
     PlayingCard,
     CardReturned,
-    // PlayerDeck
+    PlayerDeck
   },
   data: () => ({
     names: ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"],
     suits: ["♥", "♦", "♠", "♣"],
     cards: [],
-    p1: {
-      id: 1,
-      color: "#ff9ff3",
-      name: "Mueen",
-      hand: [
-        { id: 1, name: "test" },
-        { id: 2, name: "test" },
-        { id: 3, name: "test" },
-        { id: 4, name: "test" },
-        { id: 5, name: "test" },
-        { id: 6, name: "test" }
-      ],
-      score: 40
-    },
-    p2: {
-      id: 2,
-      color: "#feca57",
-      name: "Dini",
-      hand: [],
-      score: 0
-    },
-    p3: {
-      id: 3,
-      color: "#ff6b6b",
-      name: "Sadly",
-      hand: [],
-      score: 0
-    }
+    players: [
+      {
+        id: 1,
+        color: "#ff9ff3",
+        name: "Hassan",
+        hand: [
+          { handId: 1, suit: "♦", name: "A", color: "red--text", show: false },
+          { handId: 2, suit: "♦", name: "2", color: "black--text", show: false },
+          { handId: 3, suit: "♦", name: "4", color: "black--text", show: false  },
+          { handId: 4, suit: "♦", name: "4", color: "black--text", show: false },
+          { handId: 5 },
+          { handId: 6 }
+        ],
+        score: 76
+      },
+      {
+        id: 2,
+        color: "#feca57",
+        name: "Nadim",
+        hand: [
+          { handId: 1, suit: "♦", name: "A", color: "red--text", show: false },
+          { handId: 2},
+          { handId: 3, suit: "♦", name: "4", color: "black--text", show: false  },
+          { handId: 4, suit: "♦", name: "4", color: "black--text", show: false },
+          { handId: 5 },
+          { handId: 6 }
+        ],
+        score: 7
+      },
+      {
+        id: 3,
+        color: "#ff6b6b",
+        name: "Kuntol",
+        hand: [
+          { handId: 1, suit: "♦", name: "A", color: "red--text", show: false },
+          { handId: 2},
+          { handId: 3},
+          { handId: 4, suit: "♦", name: "4", color: "black--text", show: false },
+          { handId: 5 },
+          { handId: 6 }
+        ],
+        score: 98
+      },
+      {
+        id: 4,
+        color: "#48dbfb",
+        name: "Dini",
+        hand: [
+          { handId: 1},
+          { handId: 2},
+          { handId: 3},
+          { handId: 4, suit: "♦", name: "4", color: "black--text", show: false },
+          { handId: 5 },
+          { handId: 6 }
+        ],
+        score: 57
+      },
+      {
+        id: 5,
+        color: "#1dd1a1",
+        name: "Mueen",
+        hand: [
+          { handId: 1, suit: "♦", name: "A", color: "red--text", show: true },
+          { handId: 2, suit: "♦", name: "2", color: "black--text", show: true },
+          { handId: 3 },
+          { handId: 4, suit: "♦", name: "4", color: "black--text", show: true },
+          { handId: 5, suit: "♦", name: "5", color: "black--text", show: false },
+          { handId: 6, suit: "♦", name: "6", color: "red--text", show: true }
+        ],
+        score: 40
+      },
+      {
+        id: 6,
+        color: "#8c7ae6",
+        name: "Onik",
+        hand: [
+          { handId: 1, suit: "♦", name: "A", color: "red--text", show: true },
+          { handId: 2, suit: "♦", name: "2", color: "black--text", show: true },
+          { handId: 3 },
+          { handId: 4 },
+          { handId: 5 },
+          { handId: 6 }
+        ],
+        score: 76
+      },
+      {
+        id: 7,
+        color: "#c8d6e5",
+        name: "TazHos",
+        hand: [
+          { handId: 1 },
+          { handId: 2, suit: "♦", name: "2", color: "black--text", show: false },
+          { handId: 3 },
+          { handId: 4 },
+          { handId: 5 },
+          { handId: 6 }
+        ],
+        score: 76
+      },
+      {
+        id: 8,
+        color: "#8395a7",
+        name: "Sadly",
+        hand: [
+          { handId: 1 },
+          { handId: 2 },
+          { handId: 3 },
+          { handId: 4 },
+          { handId: 5 },
+          { handId: 6 }
+        ],
+        score: 8
+      }
+    ]
   })
 };
 </script>
