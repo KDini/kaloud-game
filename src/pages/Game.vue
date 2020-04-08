@@ -2,19 +2,43 @@
   <v-container grid-list-md fluid style="height:100%;width:100%">
     <v-layout row style="height:100%;width:100%">
       <v-flex xs4>
-        <PlayerDeck :color="players[0].color" :name="players[0].name" :hand="players[0].hand" :score="players[0].score"></PlayerDeck>
+        <PlayerDeck
+          :color="players[0].color"
+          :name="players[0].name"
+          :hand="players[0].hand"
+          :score="players[0].score"
+        ></PlayerDeck>
       </v-flex>
       <v-flex xs4>
-        <PlayerDeck :color="players[1].color" :name="players[1].name" :hand="players[1].hand" :score="players[1].score"></PlayerDeck>
+        <PlayerDeck
+          :color="players[1].color"
+          :name="players[1].name"
+          :hand="players[1].hand"
+          :score="players[1].score"
+        ></PlayerDeck>
       </v-flex>
       <v-flex xs4>
-        <PlayerDeck :color="players[2].color" :name="players[2].name" :hand="players[2].hand" :score="players[2].score"></PlayerDeck>
+        <PlayerDeck
+          :color="players[2].color"
+          :name="players[2].name"
+          :hand="players[2].hand"
+          :score="players[2].score"
+        ></PlayerDeck>
       </v-flex>
       <v-flex xs4>
-        <PlayerDeck :color="players[3].color" :name="players[3].name" :hand="players[3].hand" :score="players[3].score"></PlayerDeck>
+        <PlayerDeck
+          :color="players[3].color"
+          :name="players[3].name"
+          :hand="players[3].hand"
+          :score="players[3].score"
+        ></PlayerDeck>
       </v-flex>
       <v-flex xs4>
         <v-card flat color="transparent" style="height:100%;width:100%">
+          <v-sheet
+            class="text-center"
+            :color="players[4].color"
+          >A toi de jouer {{ players[4].name }}</v-sheet>
           <v-card-text class="text-center">4 cartes dans la pioche</v-card-text>
           <v-layout row>
             <v-flex xs6>
@@ -31,16 +55,36 @@
         </v-card>
       </v-flex>
       <v-flex xs4>
-        <PlayerDeck :color="players[4].color" :name="players[4].name" :hand="players[4].hand" :score="players[4].score"></PlayerDeck>
+        <PlayerDeck
+          :color="players[4].color"
+          :name="players[4].name"
+          :hand="players[4].hand"
+          :score="players[4].score"
+        ></PlayerDeck>
       </v-flex>
       <v-flex xs4>
-        <PlayerDeck :color="players[5].color" :name="players[5].name" :hand="players[5].hand" :score="players[5].score"></PlayerDeck>
+        <PlayerDeck
+          :color="players[5].color"
+          :name="players[5].name"
+          :hand="players[5].hand"
+          :score="players[5].score"
+        ></PlayerDeck>
       </v-flex>
       <v-flex xs4>
-        <PlayerDeck :color="players[6].color" :name="players[6].name" :hand="players[6].hand" :score="players[6].score"></PlayerDeck>
+        <PlayerDeck
+          :color="players[6].color"
+          :name="players[6].name"
+          :hand="players[6].hand"
+          :score="players[6].score"
+        ></PlayerDeck>
       </v-flex>
       <v-flex xs4>
-        <PlayerDeck :color="players[7].color" :name="players[7].name" :hand="players[7].hand" :score="players[7].score"></PlayerDeck>
+        <PlayerDeck
+          :color="players[7].color"
+          :name="players[7].name"
+          :hand="players[7].hand"
+          :score="players[7].score"
+        ></PlayerDeck>
       </v-flex>
     </v-layout>
   </v-container>
@@ -70,9 +114,27 @@ export default {
         name: "Hassan",
         hand: [
           { handId: 1, suit: "♦", name: "A", color: "red--text", show: false },
-          { handId: 2, suit: "♦", name: "2", color: "black--text", show: false },
-          { handId: 3, suit: "♦", name: "4", color: "black--text", show: false  },
-          { handId: 4, suit: "♦", name: "4", color: "black--text", show: false },
+          {
+            handId: 2,
+            suit: "♦",
+            name: "2",
+            color: "black--text",
+            show: false
+          },
+          {
+            handId: 3,
+            suit: "♦",
+            name: "4",
+            color: "black--text",
+            show: false
+          },
+          {
+            handId: 4,
+            suit: "♦",
+            name: "4",
+            color: "black--text",
+            show: false
+          },
           { handId: 5 },
           { handId: 6 }
         ],
@@ -84,9 +146,21 @@ export default {
         name: "Nadim",
         hand: [
           { handId: 1, suit: "♦", name: "A", color: "red--text", show: false },
-          { handId: 2},
-          { handId: 3, suit: "♦", name: "4", color: "black--text", show: false  },
-          { handId: 4, suit: "♦", name: "4", color: "black--text", show: false },
+          { handId: 2 },
+          {
+            handId: 3,
+            suit: "♦",
+            name: "4",
+            color: "black--text",
+            show: false
+          },
+          {
+            handId: 4,
+            suit: "♦",
+            name: "4",
+            color: "black--text",
+            show: false
+          },
           { handId: 5 },
           { handId: 6 }
         ],
@@ -98,9 +172,15 @@ export default {
         name: "Kuntol",
         hand: [
           { handId: 1, suit: "♦", name: "A", color: "red--text", show: false },
-          { handId: 2},
-          { handId: 3},
-          { handId: 4, suit: "♦", name: "4", color: "black--text", show: false },
+          { handId: 2 },
+          { handId: 3 },
+          {
+            handId: 4,
+            suit: "♦",
+            name: "4",
+            color: "black--text",
+            show: false
+          },
           { handId: 5 },
           { handId: 6 }
         ],
@@ -111,10 +191,16 @@ export default {
         color: "#48dbfb",
         name: "Dini",
         hand: [
-          { handId: 1},
-          { handId: 2},
-          { handId: 3},
-          { handId: 4, suit: "♦", name: "4", color: "black--text", show: false },
+          { handId: 1 },
+          { handId: 2 },
+          { handId: 3 },
+          {
+            handId: 4,
+            suit: "♦",
+            name: "4",
+            color: "black--text",
+            show: false
+          },
           { handId: 5 },
           { handId: 6 }
         ],
@@ -129,7 +215,13 @@ export default {
           { handId: 2, suit: "♦", name: "2", color: "black--text", show: true },
           { handId: 3 },
           { handId: 4, suit: "♦", name: "4", color: "black--text", show: true },
-          { handId: 5, suit: "♦", name: "5", color: "black--text", show: false },
+          {
+            handId: 5,
+            suit: "♦",
+            name: "5",
+            color: "black--text",
+            show: false
+          },
           { handId: 6, suit: "♦", name: "6", color: "red--text", show: true }
         ],
         score: 40
@@ -154,7 +246,13 @@ export default {
         name: "TazHos",
         hand: [
           { handId: 1 },
-          { handId: 2, suit: "♦", name: "2", color: "black--text", show: false },
+          {
+            handId: 2,
+            suit: "♦",
+            name: "2",
+            color: "black--text",
+            show: false
+          },
           { handId: 3 },
           { handId: 4 },
           { handId: 5 },
