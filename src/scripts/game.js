@@ -111,8 +111,8 @@ function swapCards(card1, player1, card2, player2) {
         return card.id
     }).indexOf(card2.id);
     player2.hand.splice(indexOfCard2, 1);
-    player1.hand.push(card2);
-    player2.hand.push(card1);
+    player1.hand.splice(indexOfCard1, 0, card2);
+    player2.hand.splice(indexOfCard2, 0, card1);
 }
 
 
