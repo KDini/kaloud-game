@@ -102,6 +102,7 @@ function checkGameEnd(player) {
  */
 function drawCard(player, drawCardsStack) {
     let randomCard = randomCardInCards(drawCardsStack);
+    console.log('carte piochée: ', randomCard);
     // TODO Checker si le joueur joue ou garde la carte
     let indexOfCard = drawCardsStack.map(function (card) {
         return card.id
@@ -157,5 +158,9 @@ console.log('player3 hand: ', players[2].hand);
 playCard(players[0], [players[0].hand[0], players[0].hand[1]]);
 playCard(players[2], [players[2].hand[2], players[2].hand[1], players[2].hand[3], players[2].hand[0]]);
 playCard(players[1], [players[1].hand[0], players[1].hand[1]]);
+
+drawCard(players[0], drawCardsStack);
+
+console.log('player', players[0].name, 'a pioché une nouvelle carte', players[0].hand);
 
 console.log('Pile de cartes: ',cardsStack);
