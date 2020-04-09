@@ -94,6 +94,27 @@ function checkGameEnd(player) {
     }
 }
 
+/**
+ * Fonction qui permet de réaliser le sortilège de la carte Valet, "J".
+ * @param {Object} card1 
+ * @param {Object} player1 
+ * @param {Object} card2 
+ * @param {Object} player2 
+ */
+function swapCards(card1, player1, card2, player2) {
+    console.log("Les cartes", card1, "et", card2, "vont être échangées entre", player1.name, "et", player2.name);
+    let indexOfCard1 = player1.hand.map(function (card) {
+        return card.id
+    }).indexOf(card1.id);
+    player1.hand.splice(indexOfCard1, 1);
+    let indexOfCard2 = player2.hand.map(function (card) {
+        return card.id
+    }).indexOf(card2.id);
+    player2.hand.splice(indexOfCard2, 1);
+    player1.hand.push(card2);
+    player2.hand.push(card1);
+}
+
 
 /**
  * TODO fonction piocher une carte
@@ -154,8 +175,13 @@ console.log('player1 hand: ', players[0].hand);
 console.log('player2 hand: ', players[1].hand);
 console.log('player3 hand: ', players[2].hand);
 
-playCard(players[0], [players[0].hand[0], players[0].hand[1]]);
-playCard(players[2], [players[2].hand[2], players[2].hand[1], players[2].hand[3], players[2].hand[0]]);
-playCard(players[1], [players[1].hand[0], players[1].hand[1]]);
+// playCard(players[0], [players[0].hand[0], players[0].hand[1]]);
+// playCard(players[2], [players[2].hand[2], players[2].hand[1], players[2].hand[3], players[2].hand[0]]);
+// playCard(players[1], [players[1].hand[0], players[1].hand[1]]);
+
+swapCards(players[0].hand[0], players[0], players[1].hand[1], players[1])
+
+console.log('player1 hand: ', players[0].hand);
+console.log('player2 hand: ', players[1].hand);
 
 console.log('Pile de cartes: ',cardsStack);
