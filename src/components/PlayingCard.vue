@@ -1,6 +1,6 @@
 <template>
   <v-card class="mx-auto" width="50" height="80">
-    <div>
+    <div class="card">
       <span class="card__suit card__suit--top" :class="color">{{suit}}</span>
       <span class="card__number" :class="color">{{name}}</span>
       <span class="card__suit card__suit--bottom" :class="color">{{suit}}</span>
@@ -44,4 +44,10 @@ export default {
   top: 38%;
   text-align: center;
 }
+</style>
+
+<style scoped>
+  .card:hover {
+    cursor: pointer;
+  }
 </style>
