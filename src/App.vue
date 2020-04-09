@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Game from './components/Game';
+import Game from './pages/Game';
 export default {
   name: 'App',
   components: {
